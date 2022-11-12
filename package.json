@@ -1,0 +1,29 @@
+{
+  "name": "next-blank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development next dev",
+    "build": "next build",
+    "prod": "cross-env NODE_ENV=production pm2 start server.js --name next"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "next": "^13.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "cross-env": "^7.0.3",
+    "pm2": "^5.2.2",
+    "typescript": "^4.8.4"
+  }
+}
