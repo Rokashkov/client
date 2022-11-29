@@ -41,7 +41,7 @@ export default function TextareaEditable (props: TextareaEditableProps) {
 						<Button
 							className='confirm'
 							onClick={ () => {
-								dispatch(actionCreator({ title: stateNew }))
+								dispatch(actionCreator({ state: stateNew }))
 								useEdit(false)
 							} }
 						>Подтвердить</Button>
