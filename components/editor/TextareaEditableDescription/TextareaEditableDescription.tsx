@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hooks'
 import Button from '../Button/Button'
 import Textarea from '../Textarea/Textarea'
 import ToolBar from '../ToolBar/ToolBar'
-import style from './TextareaEditable.module.css'
+import style from './TextareaEditableDescription.module.css'
 
 interface TextareaEditableDescriptionProps {
 	actionCreator (payload?: any): {
