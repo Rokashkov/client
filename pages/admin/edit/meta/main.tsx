@@ -4,6 +4,7 @@ import Content from '../../../../components/Content/Content'
 import Button from '../../../../components/editor/Button/Button'
 import Keywords from '../../../../components/editor/KeywordsMeta/Keywords'
 import TextareaEditable from '../../../../components/editor/TextareaEditable/TextareaEditable'
+import TextareaEditableDescription from '../../../../components/editor/TextareaEditableDescription/TextareaEditableDescription'
 import Head from '../../../../components/Head'
 import Layout from '../../../../components/Layout'
 import { useAppDispatch, useAppSelector } from '../../../../hooks/redux.hooks'
@@ -49,7 +50,7 @@ export default function Meta () {
 				<Content>
 					<p>Мететеги /</p>
 					<TextareaEditable actionCreator={ setTitle } selector={ selectTitle }>Заглавие</TextareaEditable>
-					<TextareaEditable actionCreator={ setDescription } selector={ selectDescription }>Описание</TextareaEditable>
+					<TextareaEditableDescription actionCreator={ setDescription } selector={ selectDescription }>Описание</TextareaEditableDescription>
 					<Keywords></Keywords>
 					{ err && <p>Произошла ошибка :{ '(' }</p> }
 				</Content>

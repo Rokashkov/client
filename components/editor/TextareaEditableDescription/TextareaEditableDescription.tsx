@@ -5,7 +5,7 @@ import Textarea from '../Textarea/Textarea'
 import ToolBar from '../ToolBar/ToolBar'
 import style from './TextareaEditable.module.css'
 
-interface TextareaEditableProps {
+interface TextareaEditableDescriptionProps {
 	actionCreator (payload?: any): {
 		payload: any
 		type: string
@@ -17,7 +17,7 @@ interface TextareaEditableProps {
 	children: string
 }
 
-export default function TextareaEditable (props: TextareaEditableProps) {
+export default function TextareaEditableDescription (props: TextareaEditableDescriptionProps) {
 	const { actionCreator, selector } = props
 	const dispatch = useAppDispatch()
 	let state = useAppSelector(state => selector(state))
@@ -41,7 +41,7 @@ export default function TextareaEditable (props: TextareaEditableProps) {
 						<Button
 							className='confirm'
 							onClick={ () => {
-								dispatch(actionCreator({ title: stateNew }))
+								dispatch(actionCreator({ description: stateNew }))
 								useEdit(false)
 							} }
 						>Подтвердить</Button>
