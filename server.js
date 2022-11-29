@@ -2,7 +2,7 @@ import express from 'express'
 import next from 'next'
 import { createServer as createHTTPServer } from 'http'
 import { createServer as createHTTPSServer } from 'https'
-import { resolve } from 'path'
+import path from 'path'
 import { readFileSync } from 'fs'
 import redirect from './redirect.js'
 import dotEnv from 'dotenv'
@@ -10,6 +10,7 @@ import dotEnv from 'dotenv'
 dotEnv.config()
 
 async function start () {
+	const __dirname = path.resolve()
 	const app = next({})
 	const server = express()
 
@@ -20,10 +21,10 @@ async function start () {
 		return handle(req, res)
 	})
 
-	const __certs = resolve(__dirname, '..', '..', 'etc', 'letsencrypt', 'live', process.env.DOMAIN)
+	const __certs = path.resolve('..', '..', 'etc', 'letsencrypt', 'live', 'tomsk-news.ru')
 
-	const privateKey  = readFileSync(resolve(__certs, 'privkey.pem'), 'utf8')
-	const certificate = readFileSync(resolve(__certs, 'fullchain.pem'), 'utf8')
+	const privateKey  = readFileSync(path.resolve(__certs, 'privkey.pem'), 'utf8')
+	const certificate = readFileSync(path.resolve(__certs, 'fullchain.pem'), 'utf8')
 
 	const HTTPSConfig = {
 		key: privateKey,
