@@ -1,0 +1,15 @@
+.article {
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+}
+
+.article:hover {
+	box-shadow: 0px 0px 20px;
+	
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px
+}

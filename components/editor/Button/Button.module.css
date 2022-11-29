@@ -1,0 +1,44 @@
+.button {
+	align-self: center;
+	padding: 4px 6px;
+	border-radius: 5px;
+	font-size: 16px;
+	background-color: var(--bg-color-light);
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.3s ease;
+}
+
+.button:hover {
+	background-color: var(--bg-color-medium);
+}
+
+.button.create-article {
+	align-self: center;
+	padding: 4px 6px;
+	border-radius: 5px;
+	font-size: 16px;
+	background-color: var(--bg-color-medium);
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.3s ease;
+}
+
+.button.create-article:hover {
+	background-color: var(--bg-color-light)
+}
+
+.button.delete-article {
+	align-self: center;
+	padding: 4px 6px;
+	border-radius: 5px;
+	font-size: 16px;
+	background-color: var(--bg-color-medium);
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.3s ease;
+}
+
+.button.delete-article:hover {
+	background-color: var(--bg-color-light)
+}

@@ -20,18 +20,18 @@ async function start () {
 		return handle(req, res)
 	})
 
-	// const __certs = resolve(__dirname, '..', '..', 'etc', 'letsencrypt', 'live', process.env.DOMAIN)
+	const __certs = resolve(__dirname, '..', '..', 'etc', 'letsencrypt', 'live', process.env.DOMAIN)
 
-	// const privateKey  = readFileSync(resolve(__certs, 'privkey.pem'), 'utf8')
-	// const certificate = readFileSync(resolve(__certs, 'fullchain.pem'), 'utf8')
+	const privateKey  = readFileSync(resolve(__certs, 'privkey.pem'), 'utf8')
+	const certificate = readFileSync(resolve(__certs, 'fullchain.pem'), 'utf8')
 
-	// const HTTPSConfig = {
-	// 	key: privateKey,
-	// 	cert: certificate
-	// }
+	const HTTPSConfig = {
+		key: privateKey,
+		cert: certificate
+	}
 
-	// createHTTPSServer(HTTPSConfig, server).listen(443)
-	createHTTPServer(server).listen(80)
+	createHTTPSServer(HTTPSConfig, server).listen(443)
+	createHTTPServer(redirect).listen(80)
 }
 
 start()

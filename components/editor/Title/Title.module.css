@@ -1,0 +1,14 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+	padding: calc(var(--default-margin) * 0.5) calc(var(--default-side-margin) * 0.5);
+	border-radius: 10px;
+	background-color: var(--bg-color-light);
+	word-wrap: break-word;
+}
+
+.container__title {
+	font-size: 14px;
+}

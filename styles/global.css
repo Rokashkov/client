@@ -1,14 +1,141 @@
+/*---------- Imports ----------*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+/*---------- /Imports ----------*/
 
+/*---------- Root ----------*/
+:root {
+	--header-height: 40px;
+	--footer-height: 80px;
+	--main-max-width: 1200px;
+	--default-margin: 20px;
+	--default-side-margin: calc(var(--default-margin) * 1.5);
+	--main-border-radius: 10px;
+	--bg-color-dark: rgb(61, 61, 61);
+	--bg-color-dark-inactive: rgb(160, 160, 160);
+	--bg-color-medium: rgb(214, 214, 214);
+	--bg-color-light: white;
+}
+/*---------- /Root ----------*/
+
+/*---------- CSS Reset ----------*/
 * {
+	padding: 0;
 	margin: 0;
+	border: none;
 	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font: inherit
+}
+
+ul {
+	list-style: none;
+}
+/*---------- /CSS Reset ----------*/
+
+/*---------- Global ----------*/
+* {
 	font-family: Montserrat;
 }
 
 #__next {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 	align-items: center;
+	min-height: 100vh;
+	background-color: var(--bg-color-light);
 }
+/*---------- /Global ----------*/
+
+/*---------- <Header> ----------*/
+header {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: var(--header-height);
+	width: 100%;
+	padding: 0 var(--default-side-margin);
+	background-color: var(--bg-color-dark);
+	color: var(--bg-color-medium);
+}
+
+header > nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+header > nav > a {
+	padding: 5px 10px;
+	line-height: 1;
+	transition: color 0.3s ease;
+}
+
+header > nav > a:hover {
+	color: var(--bg-color-light)
+}
+/*---------- </Header> ----------*/
+
+/*---------- <Main> ----------*/
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 20px;
+	min-height: calc(100vh - var(--footer-height) - var(--header-height) - var(--default-margin) * 2);
+	width: calc(100% - var(--default-side-margin) * 2);
+	max-width: var(--main-max-width);
+	padding: var(--default-margin) var(--default-side-margin);
+	border-radius: var(--main-border-radius) var(--main-border-radius) 0 0;
+	margin: calc(var(--header-height) + var(--default-margin)) 0 0 0;
+	background-color: var(--bg-color-medium);
+}
+
+h1 {
+	font-size: 28px;
+	font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
+	font-size: 24px;
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+	padding: calc(var(--default-margin) * 0.5) calc(var(--default-side-margin) * 0.5);
+	border-radius: 10px;
+	background-color: var(--bg-color-light);
+	word-wrap: break-word;
+}
+/*---------- </Main> ----------*/
+
+/*---------- <Footer> ----------*/
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: var(--footer-height);
+	width: calc(100% - var(--default-side-margin) * 2);
+	max-width: var(--main-max-width);
+	padding: var(--default-margin) var(--default-side-margin);
+	border-radius: 0 0 var(--main-border-radius) var(--main-border-radius);
+	margin: 0 0 var(--default-margin) 0;
+	background-color: var(--bg-color-dark);
+	color: var(--bg-color-medium)
+}
+/*---------- </Footer> ----------*/

@@ -1,0 +1,22 @@
+.meta {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	gap: 15px;
+	width: 100%;
+	color: var(--bg-color-dark-inactive);
+	font-size: 14px;
+}
+
+.meta__views {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 5px;
+
+}
+
+.meta__views__svg {
+	fill: var(--bg-color-dark-inactive);
+}

@@ -1,0 +1,45 @@
+.pag {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	gap: 10px;
+}
+
+.pag__item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+	width: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.3s ease;
+}
+
+.pag__item__text {
+	line-height: 1;
+}
+
+.pag__item:hover {
+	background-color: var(--bg-color-dark-inactive);
+}
+
+.pag__item_active {
+	background-color: var(--bg-color-dark);
+}
+
+.pag__item_active:hover {
+	background-color: var(--bg-color-dark);
+}
+
+.pag__item_active .pag__item__text {
+	color: var(--bg-color-medium);
+	transition: color 0.3s ease;
+}
+
+.pag__item_active:hover .pag__item__text {
+	color: white
+}
